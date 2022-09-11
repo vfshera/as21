@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\Auth;
 class LoginController extends Controller
 {
 
-    protected $redirectsTo = '/admin';
+    protected $redirectsTo = '/admin/dashboard';
 
     public function loginPage()
     {
