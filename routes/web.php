@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\CustomerReview;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -11,16 +12,18 @@ use Illuminate\Support\Facades\Route;
 | routes are loaded by the RouteServiceProvider within a group which
 | contains the "web" middleware group. Now create something great!
 |
-*/
+ */
 
 Route::get('/', function () {
-    return view('welcome');
+
+    $reviews = CustomerReview::where('rating', '>=', 3)->get()->random(3);
+    return view('welcome', compact('reviews'));
 });
 
 Route::middleware([
     'auth:sanctum',
     config('jetstream.auth_session'),
-    'verified'
+    'verified',
 ])->group(function () {
     Route::get('/dashboard', function () {
         return view('dashboard');

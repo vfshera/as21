@@ -254,11 +254,12 @@
                     </p>
                 </div>
             </div>
-            {{-- <Link to="/client/dashboard/place-order">
+            <a href="/client/dashboard/place-order">
+                {{-- fix link --}}
                 <button class="place-order">
                     Place Your Order
                 </button>
-            </Link> --}}
+            </a>
         </div>
 
         <div class="subjects">
@@ -314,27 +315,30 @@
             </div>
         </div>
 
-        {{-- {reviews.length != 0 && (
+
+        @if ($reviews != null)
             <div class="customer-say">
                 <h1 class="px-5 mt-14 lg:mt-28 header-text">
                     WHAT OUR CUSTOMERS SAY
                 </h1>
 
                 <div class="cards-list">
-                    {reviews &&
-                        reviews.map((rate, index) => (
-                            <RatingCard cardData={rate} key={index} />
-                        ))}
+                    @foreach ($reviews as $review)
+                        <x-rating-card :review="$review" />
+                    @endforeach
+
                 </div>
             </div>
-        )} --}}
+        @endif
+
+
 
         <div id="contact" class="contact">
             <h1 class="mt-14 lg:mt-28 header-text">
                 GET IN TOUCH WITH US
             </h1>
 
-            <form action="" class="w-5/6 sm:w-3/4 lg:w-3/5 mt-7 mb-14 lg:mb-28 2xl:w-1/2" {{-- onSubmit={Formik.handleSubmit} --}}>
+            <form action="" class="w-5/6 sm:w-3/4 lg:w-3/5 mt-7 mb-14 lg:mb-28 2xl:w-1/2">
                 {{-- <InputField
                     name="name"
                     labelText="Name"

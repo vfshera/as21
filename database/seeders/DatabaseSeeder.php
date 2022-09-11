@@ -2,8 +2,6 @@
 
 namespace Database\Seeders;
 
-// use Illuminate\Database\Console\Seeds\WithoutModelEvents;
-
 use App\Models\Admin;
 use App\Models\User;
 use Illuminate\Database\Seeder;
@@ -19,15 +17,25 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         User::create([
-            'name' => 'First User',
-            'email' => 'userone@mail.com',
+            'name' => 'Admin One',
+            'email' => 'admin@as21.com',
             'password' => Hash::make('123456789'),
+            'email_verified_at' => now(),
         ]);
 
         Admin::create([
-            'name' => 'General Admin',
-            'email' => 'adminone@mail.com',
+            'name' => 'Admin One',
+            'email' => 'admin@as21.com',
             'password' => Hash::make('123456789'),
+            'email_verified_at' => now(),
+        ]);
+
+        $this->call([
+            AcademicLevelSeeder::class,
+            PaperTypeSeeder::class,
+            CustomerReviewSeeder::class,
+            SubjectAreaSeeder::class,
+            OrderSeeder::class,
         ]);
     }
 }
