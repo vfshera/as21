@@ -4,7 +4,11 @@
         <label for="{{ strtolower($label) }}">{{ $label }}</label>
     @endif
 
-    <input type="{{ $inputType ?? 'text' }}" name="{{ strtolower($label) }}" placeholder="{{ $placeholder }}"
+    @error($name)
+        <div className="field-errors">{{ $message }}</div>
+    @enderror
+
+    <input type="{{ $inputType ?? 'text' }}" name="{{ $name ?? strtolower($label) }}" placeholder="{{ $placeholder }}"
         value="{{ $value }}" {{ $attributes }} />
 
     @if ($inputType == 'file')

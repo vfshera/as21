@@ -1,6 +1,8 @@
 <div class="input-group">
     <label>{{ $label }}</label>
-    {{-- <div className="field-errors">{errors}</div> --}}
+    @error($name)
+        <div className="field-errors">{{ $message }}</div>
+    @enderror
     <textarea cols="{{ $cols }}" rows="{{ $rows }}" name="{{ strtolower($label) }}"
-        placeholder="{{ $placeholder }}"></textarea>
+        placeholder="{{ $placeholder }}" {{ $attributes }}></textarea>
 </div>

@@ -18,7 +18,9 @@ class TextAreaField extends Component
         public string $rows = "10",
         public string $placeholder = "",
     ) {
-        //
+        if ($name == "") {
+            $this->name = strtolower($label);
+        }
     }
 
     /**

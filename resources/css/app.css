@@ -529,6 +529,10 @@ html::-webkit-scrollbar-thumb {
     @apply flex flex-col mt-3 mb-6;
 }
 
+.input-group .field-errors {
+    @apply text-red-500 text-sm;
+}
+
 .contact {
     @apply flex flex-col items-center justify-center bg-white;
 }

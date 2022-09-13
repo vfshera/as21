@@ -27,7 +27,9 @@ class InputField extends Component
         public bool $noLabel = false,
 
     ) {
-        //
+        if ($name == "") {
+            $this->name = strtolower($label);
+        }
     }
 
     /**
