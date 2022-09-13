@@ -388,11 +388,11 @@ html::-webkit-scrollbar-thumb {
 }
 
 .place-order {
-    @apply px-8 py-4 mt-6 mb-20 font-bold text-white rounded-sm rounded bg-primary-4;
+    @apply px-8 py-4 mt-6 mb-20 font-bold text-white rounded-sm  bg-primary-4;
 }
 
 .find-my-writer {
-    @apply px-8 py-4 mt-6 font-bold text-white rounded-sm rounded bg-primary-4;
+    @apply px-8 py-4 mt-6 font-bold text-white rounded-sm  bg-primary-4;
 }
 
 .thinhr {
@@ -692,7 +692,7 @@ footer {
 }
 
 .toggler {
-    @apply flex flex-col items-center block md:hidden;
+    @apply flex flex-col items-center  md:hidden;
     height: 20px;
     width: 30px;
 }
@@ -943,7 +943,7 @@ footer {
 
 /* layout */
 .backend-layout {
-    @apply hidden lg:inline lg:flex  lg:justify-between lg:w-full lg:h-full lg:mt-16;
+    @apply hidden  lg:flex  lg:justify-between lg:w-full lg:h-full lg:mt-16;
 }
 
 .sidebar_component {

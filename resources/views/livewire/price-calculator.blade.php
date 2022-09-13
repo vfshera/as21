@@ -7,18 +7,11 @@
                 <span @class([
                     'curr-tab' => $selectedService == $key,
                     'idle-tab' => $selectedService != $key,
-                ])>
+                ]) wire:click="$set('selectedService',{{ $key }})">
                     {{ $service }}
                 </span>
             @endforeach
-            {{-- <span --}}
-            {{-- class={paperAction==0 ? "curr-tab" : "idle-tab" } onClick={(e)=> {
-                e.preventDefault();
-                setPaperAction(0);
-                checkCalcFields();
-                }} --}}
-            {{-- Writing --}}
-            {{-- </span> --}}
+
 
         </div>
         <div class="mt-4 essay-type">

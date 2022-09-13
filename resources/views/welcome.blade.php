@@ -339,96 +339,24 @@
             </h1>
 
             <form action="" class="w-5/6 sm:w-3/4 lg:w-3/5 mt-7 mb-14 lg:mb-28 2xl:w-1/2">
-                {{-- <InputField
-                    name="name"
-                    labelText="Name"
-                    type="text"
-                    placeholder="Type Your Name Here"
-                    onBlur={Formik.handleBlur}
-                    value={Formik.values.name}
-                    onChange={Formik.handleChange}
-                    errors={
-                        Formik.errors.name &&
-                        Formik.touched.name &&
-                        Formik.errors.name
-                    }
-                />
 
-                <InputField
-                    name="email"
-                    labelText="Email"
-                    type="text"
-                    placeholder="Type Your Email Here"
-                    onBlur={Formik.handleBlur}
-                    value={Formik.values.email}
-                    onChange={Formik.handleChange}
-                    errors={
-                        Formik.errors.email &&
-                        Formik.touched.email &&
-                        Formik.errors.email
-                    }
-                />
+                <x-form.input-field label="Name" input-type="text" placeholder="Type your name here..." />
+                <x-form.input-field label="Email" input-type="email" placeholder="Type your email here..." />
+                <x-form.input-field label="WhatsApp Number" input-type="number"
+                    placeholder="Type your number here..." />
 
-                <InputField
-                    name="whatsappnumber"
-                    labelText="WhatsApp Number"
-                    type="number"
-                    placeholder="Type Your WhatsApp Number Here"
-                    onBlur={Formik.handleBlur}
-                    value={Formik.values.whatsappnumber}
-                    onChange={Formik.handleChange}
-                    errors={
-                        Formik.errors.whatsappnumber &&
-                        Formik.touched.whatsappnumber &&
-                        Formik.errors.whatsappnumber
-                    }
-                />
+                <x-form.text-area-field label="Message" name="message" />
 
-                <TextAreaInputField
-                    labelText="Message"
-                    textareaName="message"
-                    id="message"
-                    placeholder="Type Message Here"
-                    onBlur={Formik.handleBlur}
-                    value={Formik.values.message}
-                    onChange={Formik.handleChange}
-                    errors={
-                        Formik.errors.message &&
-                        Formik.touched.message &&
-                        Formik.errors.message
-                    }
-                />
+                <x-form.radio-field label="Email Me Back" name="mailback" />
+                <x-form.radio-field label="Add Me On WhatsApp" name="addonwhatsapp" />
 
-                <RadioInputField
-                    labelText="Email Me Back"
-                    inputName="mailback"
-                    onBlur={Formik.handleBlur}
-                    value={Formik.values.mailback}
-                    onChange={Formik.handleChange}
-                    errors={
-                        Formik.errors.mailback &&
-                        Formik.touched.mailback &&
-                        Formik.errors.mailback
-                    }
-                />
 
-                <RadioInputField
-                    labelText="Add Me On WhatsApp"
-                    inputName="addonwhatsapp"
-                    onBlur={Formik.handleBlur}
-                    value={Formik.values.addonwhatsapp}
-                    onChange={Formik.handleChange}
-                    errors={
-                        Formik.errors.addonwhatsapp &&
-                        Formik.touched.addonwhatsapp &&
-                        Formik.errors.addonwhatsapp
-                    }
-                /> --}}
+
 
                 <button type="submit" class="btn-pri">
-                    {{-- {Formik.isSubmitting ? "SENDING" : "SUBMIT"} --}}
+                    Submit
                 </button>
             </form>
         </div>
     </div>
-    </x-guest-layout>
+</x-app-layout>
