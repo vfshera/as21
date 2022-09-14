@@ -13,7 +13,7 @@ class PriceCalculator extends Component
     public $academicLevels;
     public $paperTypes;
 
-    public $services = ["Writing", "Rewriting", "Editiong"];
+    public $services = ["Writing", "Rewriting", "Editing"];
     public $selectedService = 0;
 
     public function mount()

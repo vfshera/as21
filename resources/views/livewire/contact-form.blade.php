@@ -9,7 +9,8 @@
     <x-form.text-area-field label="Message" name="message" wire:model.debounce.500ms="message" />
     <x-form.radio-field label="Email Me Back" name="mailback" wire:model.debounce.500ms="mailback" />
     <x-form.radio-field label="Add Me On WhatsApp" name="addonwhatsapp" wire:model.debounce.500ms="addonwhatsapp" />
-    <button type="submit" class="btn-pri">
+
+    <button type="submit" class="btn-pri bg-primary-1">
         Submit
     </button>
 </form>

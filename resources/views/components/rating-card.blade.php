@@ -45,7 +45,7 @@
             @endif
         </div>
 
-        <div class="date">{{ $review->created_at }}</div>
+        <div class="date">{{ date('s M Y', strtotime($review->created_at)) }}</div>
     </div>
 
     <div class="remarks">{{ $review->remarks }}</div>

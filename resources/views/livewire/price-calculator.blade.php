@@ -1,5 +1,5 @@
-<div class="hidden price-calculator lg:block">
-    <h1 class="text-2xl font-bold">Price Calculator</h1>
+<div class="price-calculator ">
+    <h1 class="">Price Calculator</h1>
     <div class="calc-body">
         <div class="calc-tabs">
 
@@ -14,8 +14,8 @@
 
 
         </div>
-        <div class="mt-4 essay-type">
-            <select name="essay-type" id="essay-type" class="w-full p-1" {{-- onChange={(e)=> {
+        <div class="essay-type">
+            <select name="essay-type" id="essay-type" {{-- onChange={(e)=> {
                 e.preventDefault();
                 checkCalcFields();
                 }} --}}>
@@ -32,8 +32,8 @@
             </select>
         </div>
 
-        <div class="mt-4 subject-area-select">
-            <select name="essay-type" id="essay-type" class="w-full p-1">
+        <div class=" subject-area">
+            <select name="subject-area" id="subject-area">
                 <option value="" selected disabled>
                     Choose Subject Area
                 </option>
@@ -48,8 +48,8 @@
             </select>
         </div>
 
-        <div class="flex justify-between mt-4 stage-time">
-            <select name="stage" id="stage" class="w-45/100 p-1">
+        <div class=" stage-time">
+            <select name="stage" id="stage">
 
 
                 @foreach ($academicLevels as $key => $academicLevel)
@@ -62,7 +62,7 @@
 
             </select>
 
-            <select name="essay-time" id="essay-time" class="w-45/100 p-1" {{-- onChange={(e)=> {
+            <select name="essay-time" id="essay-time" {{-- onChange={(e)=> {
                 e.preventDefault();
                 checkCalcFields();
                 }} --}}>
@@ -82,16 +82,16 @@
             </select>
         </div>
 
-        <div class="flex justify-center  mt-4 essay-pages ">
-            <input type="number" step="1" min="1" class="w-full text-center p-1 rounded"
-                {{-- onChange={(e)=> {
+        <div class="essay-pages ">
+            <input type="number" step="1" min="1" {{-- onChange={(e)=> {
             e.preventDefault();
             checkCalcFields();
-            }} --}} placeholder="Enter Number Of Pages..." />
+            }} --}}
+                placeholder="Enter Number Of Pages..." />
         </div>
 
-        <div class="flex justify-center mt-4 essay-spacing">
-            <select name="spacing" id="spacing-input" class="w-full text-center p-1 rounded" {{-- onChange={(e)=> {
+        <div class="essay-spacing">
+            <select name="spacing" id="spacing-input" {{-- onChange={(e)=> {
                 e.preventDefault();
                 checkCalcFields();
                 }} --}}>
@@ -103,11 +103,11 @@
             </select>
         </div>
 
-        <div class="flex justify-end px-3 mt-4 font-bold computed-price">
+        <div class="computed-price">
             {{-- ${orderPrice} --}}0.00
         </div>
 
-        <button class="w-full py-3 mt-4 font-bold text-white rounded bg-primary-4" {{-- onClick={writeMyPaper} --}}>
+        <button class="write-my-paper" {{-- onClick={writeMyPaper} --}}>
             Write My Paper
         </button>
     </div>

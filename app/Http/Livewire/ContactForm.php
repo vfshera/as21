@@ -2,6 +2,7 @@
 
 namespace App\Http\Livewire;
 
+use App\Models\Contact;
 use Livewire\Component;
 
 class ContactForm extends Component
@@ -13,16 +14,11 @@ class ContactForm extends Component
     public $mailback;
     public $addonwhatsapp;
 
-    public function mound()
-    {
-        $this->fill(['mailback' => false, 'addonwhatsapp' => false]);
-    }
-
     protected $rules = [
         'name' => 'required|min:4',
         'message' => 'required|min:20',
         'email' => 'required|email',
-        'whatsappnumber' => 'required|min:12',
+        'whatsappnumber' => 'required|min:10',
         'mailback' => '',
         'addonwhatsapp' => ''];
 
@@ -44,7 +40,11 @@ class ContactForm extends Component
 
         $validData = $this->validate();
 
-        dd($validData);
+        if (!Contact::create($validData)) {
+            return redirect()->back()->withInput();
+        }
+
+        return redirect('/');
 
     }
 }

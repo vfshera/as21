@@ -1,14 +1,14 @@
-<header>
-    <nav id="navigation" class="fixed top-0 left-0 h-16 nav-main nav-main-dp " {{-- class={`fixed top-0 left-0 h-16 nav-main ${ inAdminPanel ? " nav-main-ap " : " nav-main-dp "
+<header class="navigation">
+    <nav class=" nav-main nav-main-dp " {{-- class={`fixed top-0 left-0 h-16 nav-main ${ inAdminPanel ? " nav-main-ap " : " nav-main-dp "
         }`} --}}>
         <div class="nav-left">
             <div class="logo">
-                <Link to="/">
-                <img src="/storage/images/as21logo.png" class="h-8" alt="academiasteph21 logo" />
-                <span class="ml-2 text-lg">
-                    AcademiaSteph21
-                </span>
-                </Link>
+                <a href="/">
+                    <img src="/storage/images/as21logo.png" class="h-8" alt="academiasteph21 logo" />
+                    <span class="ml-2 text-lg">
+                        AcademiaSteph21
+                    </span>
+                </a>
             </div>
         </div>
 
@@ -23,7 +23,7 @@
             {{-- {!dropNav && <span class="menu-line"></span>} --}}
         </div>
 
-        <div class=" nav-right">
+        <div class="nav-right">
             {{-- {!auth && !clientAuth ? (
             <> --}}
             <li class=" navlink hover:border-b-2">

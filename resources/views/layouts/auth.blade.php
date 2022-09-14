@@ -9,7 +9,7 @@
     <title>{{ config('app.name', 'AcademiaSteph21') }}</title>
 
     <!-- Scripts -->
-    @vite(['resources/scss/app.scss', 'resources/js/app.js'])
+    @vite(['resources/css/app.css', 'resources/js/app.js'])
 
     <!-- Styles -->
     @livewireStyles
@@ -17,7 +17,7 @@
 
 <body>
 
-    <x-navbar />
+
 
     <main>
         {{ $slot }}

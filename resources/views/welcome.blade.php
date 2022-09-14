@@ -1,5 +1,5 @@
 <x-app-layout>
-    <div class="bg-gray-100">
+    <div class="welcome-page ">
         <div id="hero" class="hero" style="background: url('storage/images/home.webp')">
             <div class="cta">
                 <p class="cta-lead">
@@ -36,7 +36,7 @@
                         alt="Check Our Solutions Button"></img>
                 </button>
             </div>
-            {{-- <PriceCalculator /> --}}
+
             <livewire:price-calculator />
         </div>
 
@@ -147,7 +147,7 @@
             <h1 class="mt-24 header-text">
                 WHY CHOOSE OUR ESSAY SERVICE
             </h1>
-            <p class="px-5 mt-12 text-lg text-center lg:text-2xl text-dark-5">
+            <p class="why-us-justification">
                 We aim to verily offer to subsidize the time constrain
                 faced by students across the globe due to the busy
                 schedules.
@@ -254,11 +254,8 @@
                     </p>
                 </div>
             </div>
-            <a href="/client/dashboard/place-order">
-                {{-- fix link --}}
-                <button class="place-order">
-                    Place Your Order
-                </button>
+            <a href="/client/dashboard/place-order" class="btn-grn text-white mb-20">
+                Place Your Order
             </a>
         </div>
 
@@ -266,7 +263,7 @@
             <div class="info">
                 <h1 class="pt-8 header-text">SUBJECTS AVAILABLE</h1>
 
-                <p class="px-5 py-8 text-center sm:text-xl">
+                <p class="disciplines">
                     Our team of experts is vast in various disciplines,
                     something that we pride in as a team. <br />
                     We offer services in line with the following

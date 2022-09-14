@@ -1,18 +1,18 @@
 <?php
 
-namespace App\View\Components\form;
+namespace App\View\Components;
 
 use Illuminate\View\Component;
 
-class RadioField extends Component
+class AuthLayout extends Component
 {
     /**
      * Create a new component instance.
      *
      * @return void
      */
-    public function __construct(public string $label = "",
-        public string $name = "", ) {
+    public function __construct()
+    {
         //
     }
 
@@ -23,7 +23,6 @@ class RadioField extends Component
      */
     public function render()
     {
-
-        return view('components.form.radio-field');
+        return view('layouts.auth');
     }
 }
