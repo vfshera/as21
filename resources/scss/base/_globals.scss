@@ -1,0 +1,26 @@
+body,
+html {
+    --scrollbarBG: #111111;
+    --thumbBG: #f27323;
+    scroll-behavior: smooth;
+    height: 100%;
+}
+
+html {
+    scrollbar-color: var(--thumbBG) var(--scrollbarBG);
+    scrollbar-width: thin;
+
+    ::-webkit-scrollbar {
+        width: 11px;
+    }
+
+    ::-webkit-scrollbar-track {
+        background: var(--scrollbarBG);
+    }
+
+    ::-webkit-scrollbar-thumb {
+        background-color: var(--thumbBG);
+        border-radius: 6px;
+        border: 3px solid var(--scrollbarBG);
+    }
+}

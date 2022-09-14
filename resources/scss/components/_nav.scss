@@ -1,0 +1,92 @@
+header.navigation {
+    nav {
+        @apply fixed top-0 left-0 h-16;
+
+        &.nav-main {
+            @apply flex items-center justify-between w-full bg-white shadow-sm lg:flex-row;
+            z-index: 999;
+
+            &.nav-main-dp {
+                padding-left: 12%;
+                padding-right: 12%;
+            }
+
+            &.nav-main-ap {
+                @apply px-8;
+            }
+
+            .nav-left {
+                .logo,
+                .logo a {
+                    @apply flex items-center justify-center cursor-pointer;
+                }
+            }
+            .nav-right,
+            .nav-left {
+                @apply flex;
+            }
+
+            .nav-right {
+                @apply items-center justify-between hidden sm:flex sm:flex-row;
+
+                .navlink {
+                    @apply px-4 font-semibold list-none cursor-pointer hover:border-primary-1;
+                }
+
+                .login-links {
+                    @apply text-sm;
+
+                    a {
+                        @apply px-3  py-1 rounded-sm  text-white;
+
+                        &:first-child {
+                            @apply bg-primary-1 mr-3;
+                        }
+
+                        &:last-child {
+                            @apply bg-primary-4;
+                        }
+                    }
+                }
+            }
+        }
+
+        .mobile-nav {
+            height: 100%;
+            /* height: calc(100% - 4rem); */
+            position: fixed;
+            z-index: 99;
+            background-color: white;
+            width: 100%;
+            margin-left: auto;
+        }
+
+        .mid .navlink {
+            animation: opacity 0.1s ease-in 1s;
+        }
+
+        .toggler {
+            @apply flex flex-col items-center  md:hidden;
+            height: 20px;
+            width: 30px;
+        }
+
+        .frwdslash {
+            transform: rotate(45deg);
+            align-self: center;
+        }
+
+        .backslash {
+            transform: rotate(-45deg);
+            align-self: center;
+        }
+
+        .menu-line {
+            background: #f27323;
+            height: 2px;
+            width: 90%;
+            display: block;
+            animation: all 0.5s ease;
+        }
+    }
+}

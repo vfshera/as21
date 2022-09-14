@@ -1,0 +1,78 @@
+.price-calculator {
+    @apply hidden lg:block  w-4/5 p-3 rounded bg-aswhite-1 sm:p-6 sm:w-1/5 md:w-1/3 lg:w-22/100 md:mr-10/100;
+
+    h1 {
+        @apply text-2xl font-bold;
+    }
+
+    .calc-body {
+        .calc-tabs {
+            @apply flex justify-around mt-4;
+
+            span {
+                @apply flex items-center justify-center w-1/3 py-2 cursor-pointer hover:bg-gray-100;
+            }
+            .idle-tab {
+                background-color: #cccccc55;
+            }
+
+            .curr-tab {
+                @apply bg-white;
+                border-bottom: 2px solid #00b985;
+            }
+        }
+
+        .essay-type,
+        .subject-area,
+        .stage-time,
+        .essay-pages,
+        .essay-spacing,
+        .computed-price {
+            @apply mt-4;
+
+            select,
+            input {
+                @apply py-1 rounded;
+            }
+        }
+
+        .stage-time {
+            select {
+                @apply w-45/100 p-1;
+            }
+        }
+        .essay-type,
+        .subject-area {
+            select {
+                @apply w-full p-1;
+            }
+        }
+
+        .stage-time {
+            @apply flex justify-between;
+        }
+        .essay-pages {
+            @apply flex justify-center;
+            input {
+                @apply w-full text-center;
+            }
+        }
+        .essay-spacing {
+            @apply flex justify-center;
+            select {
+                @apply w-full text-center;
+            }
+        }
+        .computed-price {
+            @apply flex justify-end px-3 font-bold;
+        }
+
+        .place-order {
+            @apply px-8 py-4 mt-6 mb-20 font-bold text-white rounded-sm rounded bg-primary-4;
+        }
+
+        button.write-my-paper {
+            @apply w-full py-3 mt-4 font-bold text-white rounded bg-primary-4;
+        }
+    }
+}

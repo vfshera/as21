@@ -1,0 +1,122 @@
+.custom-check {
+    width: 25px;
+    height: 25px;
+    cursor: pointer;
+}
+
+.checkmark {
+    width: 100%;
+    height: 100%;
+    border: 2px #f27323 solid;
+    display: inline-block;
+    border-radius: 5px;
+    background: #f27323 center/5000% no-repeat;
+
+    transition: background-size 0.1s ease;
+}
+
+.custom-check input:checked + .checkmark {
+    background-size: 80%;
+    transition: background-size 0.1s cubic-bezier(0.7, 0, 0.18, 1.24);
+}
+
+.custom-check input {
+    display: none;
+}
+
+.radio-group {
+    @apply flex items-center justify-between w-4/5 my-5 lg:w-3/5;
+    /* width: 55%; */
+}
+
+.input-group {
+    @apply flex flex-col my-5;
+    --anim-duration: 0.2s;
+    --anim-easing: ease-out;
+
+    input:focus {
+        background-size: 100% 2px, 100% 2px, 100%;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="number"],
+    input[type="password"] {
+        @apply appearance-none;
+        background: linear-gradient(90deg, #faa63b, #f27323) center bottom/0 2px
+                no-repeat,
+            linear-gradient(90deg, #11111144, #11111144) left bottom/100% 2px
+                no-repeat,
+            linear-gradient(90deg, #f3f4f633, #f3f4f633) left bottom/100%
+                no-repeat;
+        transition: background-size 0.3s ease;
+        padding: 12px;
+        border-top-left-radius: 3px;
+        border-top-right-radius: 3px;
+        border: none;
+        outline: none;
+    }
+
+    input[type="file"] {
+        @apply appearance-none;
+        padding: 12px;
+        border-top-left-radius: 3px;
+        border-top-right-radius: 3px;
+        border: 3px #f3f4f6cc solid;
+        outline: none;
+    }
+
+    select {
+        @apply my-2 appearance-none;
+
+        padding: 12px;
+        border-top-left-radius: 3px;
+        border-top-right-radius: 3px;
+        border: 3px #f3f4f6cc solid;
+        outline: none;
+    }
+
+    label {
+        @apply text-xl font-semibold;
+
+        .hint-box {
+            @apply text-sm ml-2 italic font-normal;
+        }
+    }
+
+    .field-errors {
+        @apply text-xs text-red-600 italic;
+    }
+
+    textarea {
+        border: #11111144 2px solid;
+        padding: 12px;
+        outline: none;
+        border-radius: 3px;
+        background-color: #f3f4f633;
+        transition: border-left-color var(--anim-duration) var(--anim-easing),
+            border-top-color var(--anim-duration) var(--anim-easing)
+                calc(var(--anim-duration) * 1),
+            border-right-color var(--anim-duration) var(--anim-easing)
+                calc(var(--anim-duration) * 2),
+            border-bottom-color var(--anim-duration) var(--anim-easing)
+                calc(var(--anim-duration) * 3);
+
+        &:focus {
+            border: #f27323 2px solid;
+            transition: border-bottom-color var(--anim-duration)
+                    var(--anim-easing),
+                border-right-color var(--anim-duration) var(--anim-easing)
+                    calc(var(--anim-duration) * 1),
+                border-top-color var(--anim-duration) var(--anim-easing)
+                    calc(var(--anim-duration) * 2),
+                border-left-color var(--anim-duration) var(--anim-easing)
+                    calc(var(--anim-duration) * 3);
+        }
+    }
+
+    input,
+    textarea {
+        @apply flex flex-col mt-3 mb-6;
+    }
+}

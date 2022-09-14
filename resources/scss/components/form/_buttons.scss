@@ -1,0 +1,33 @@
+.btn {
+    @apply text-white rounded-full;
+
+    &-pri {
+        @apply py-4 mt-8  px-14 md:w-2/5;
+        /* margin-top: 40px;
+          padding: 10px 45px; */
+        background: linear-gradient(100deg, #faa63b, #f27323);
+        transition: background 0.5s ease-out;
+
+        &:hover {
+            background: linear-gradient(
+                100deg,
+                #faa63b,
+                #f27323,
+                #f27323,
+                #f27323
+            );
+        }
+    }
+
+    &-blue {
+        @apply py-3 mt-10  px-11 bg-primary-3;
+    }
+
+    &-add {
+        @apply py-3 mt-10  px-11;
+    }
+
+    &-grn {
+        @apply py-3 mt-10  px-11 bg-primary-4;
+    }
+}
