@@ -23,6 +23,7 @@
         {{ $slot }}
     </main>
 
+    <x-footer />
 
     @stack('modals')
 

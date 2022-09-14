@@ -1,0 +1,18 @@
+footer {
+    @apply flex flex-col items-center justify-center bg-dark-1;
+
+    .details {
+        @apply flex flex-col-reverse items-center justify-between w-5/6 mt-20 mb-5 text-white lg:justify-around lg:flex-row lg:w-4/5;
+
+        .logo {
+            @apply flex py-2;
+        }
+    }
+
+    .copyright {
+        @apply block border-l-0;
+        border-left: 1px #ffffff77 solid;
+        margin-left: 10px;
+        padding-left: 10px;
+    }
+}
