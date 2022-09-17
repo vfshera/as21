@@ -33,6 +33,12 @@
     }
 
     section.charts {
-        @apply my-5 bg-gray-100 shadow rounded;
+        @apply my-5 grid grid-cols-2 gap-10;
+
+        .chart {
+            canvas {
+                @apply bg-gray-100 p-1 shadow rounded;
+            }
+        }
     }
 }

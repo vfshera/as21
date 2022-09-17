@@ -9,7 +9,7 @@
     <title>{{ config('app.name', 'AcademiaSteph21') }}</title>
 
     <!-- Scripts -->
-    @vite(['resources/scss/app.scss', 'resources/js/app.js', 'resources/js/chart.min.js'])
+    @vite(['resources/scss/app.scss', 'resources/js/app.js'])
 
     <!-- Styles -->
     @livewireStyles

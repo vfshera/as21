@@ -11,7 +11,7 @@ class Chart extends Component
      *
      * @return void
      */
-    public function __construct()
+    public function __construct(public $id = 'chart', public $type = 'line')
     {
         //
     }
