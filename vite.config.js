@@ -4,7 +4,11 @@ import laravel, { refreshPaths } from "laravel-vite-plugin";
 export default defineConfig({
     plugins: [
         laravel({
-            input: ["resources/scss/app.scss", "resources/js/app.js"],
+            input: [
+                "resources/scss/app.scss",
+                "resources/js/app.js",
+                "resources/js/chart.min.js",
+            ],
             refresh: [...refreshPaths, "app/Http/Livewire/**"],
         }),
     ],

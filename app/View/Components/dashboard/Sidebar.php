@@ -1,17 +1,18 @@
 <?php
 
-namespace App\View\Components;
+namespace App\View\Components\dashboard;
 
 use Illuminate\View\Component;
 
-class AuthLayout extends Component
+class Sidebar extends Component
 {
+
     /**
      * Create a new component instance.
      *
      * @return void
      */
-    public function __construct()
+    public function __construct(public $navs = [])
     {
 
     }
@@ -23,6 +24,6 @@ class AuthLayout extends Component
      */
     public function render()
     {
-        return view('layouts.auth');
+        return view('components.dashboard.sidebar');
     }
 }

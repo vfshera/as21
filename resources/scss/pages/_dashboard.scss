@@ -1,0 +1,38 @@
+.dashboard-homepage {
+    @apply px-5 pt-5;
+
+    section.admin-cards-sect {
+        p.sect-title {
+            @apply uppercase py-2.5 text-gray-600 text-xl font-bold;
+        }
+        .admin-cards {
+            @apply grid grid-cols-4 gap-10 border-b border-gray-200 pb-5;
+
+            &:first-child {
+                @apply pb-5 pt-0;
+            }
+
+            .admin-card {
+                @apply relative rounded  p-5 shadow  hover:shadow-md transition-shadow duration-300;
+
+                p.cards-title {
+                    @apply absolute -top-2 left-0;
+                }
+
+                // bg-gradient-to-br to-[#f6f7ff] from-[#fcfbff]
+
+                &-label {
+                    @apply uppercase text-gray-600;
+                }
+
+                &-figure {
+                    @apply font-bold text-2xl uppercase text-gray-800;
+                }
+            }
+        }
+    }
+
+    section.charts {
+        @apply my-5 bg-gray-100 shadow rounded;
+    }
+}

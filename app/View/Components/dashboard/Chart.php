@@ -1,10 +1,10 @@
 <?php
 
-namespace App\View\Components;
+namespace App\View\Components\dashboard;
 
 use Illuminate\View\Component;
 
-class AuthLayout extends Component
+class Chart extends Component
 {
     /**
      * Create a new component instance.
@@ -13,7 +13,7 @@ class AuthLayout extends Component
      */
     public function __construct()
     {
-
+        //
     }
 
     /**
@@ -23,6 +23,6 @@ class AuthLayout extends Component
      */
     public function render()
     {
-        return view('layouts.auth');
+        return view('components.dashboard.chart');
     }
 }

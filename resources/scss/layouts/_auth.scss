@@ -1,0 +1,103 @@
+:root,
+html {
+    scrollbar-width: 0;
+
+    ::-webkit-scrollbar {
+        width: 0;
+    }
+}
+
+main.dashboard {
+    @apply flex h-full;
+
+    --admin-sidebar-width: 250px;
+    --admin-content-area-width: calc(100vw - var(--admin-sidebar-width));
+
+    aside.sidebar {
+        @apply fixed top-0 left-0 h-full w-[var(--admin-sidebar-width)] bg-[#fef9f6] z-20 p-5 border-r border-gray-300;
+
+        .banner {
+            @apply flex gap-3 items-center mb-10;
+
+            img {
+                @apply h-7 lg:h-8;
+            }
+            span {
+                @apply uppercase;
+            }
+        }
+
+        nav.sidebar-navigation {
+            @apply mb-10;
+
+            &:not(:first-child) {
+                @apply my-10;
+            }
+
+            p.nav-name {
+                @apply font-semibold text-lg;
+            }
+
+            ul {
+                @apply my-2;
+                li {
+                    @apply mt-3;
+
+                    &.active {
+                        .navlink {
+                            @apply font-normal text-primary-1;
+                        }
+                    }
+
+                    &:not(:last-child) {
+                        @apply my-3;
+                    }
+
+                    .navlink {
+                        @apply font-normal text-gray-700;
+                    }
+                }
+            }
+        }
+    }
+
+    section.nav-content {
+        --admin-nav-height: 60px;
+
+        @apply relative bg-gradient-to-br from-[#f6f7ff] to-[#fcfbff] overflow-y-scroll  h-full ml-[var(--admin-sidebar-width)] flex-1;
+
+        header.dashboard-header {
+            @apply fixed px-5 bg-gradient-to-br from-[#f6f7ff] to-[#fcfbff] shadow-sm justify-end gap-20 flex items-center h-[var(--admin-nav-height)] w-[var(--admin-content-area-width)] z-10;
+
+            nav.header-links {
+                @apply flex;
+
+                ul {
+                    @apply flex gap-5;
+
+                    li {
+                        a {
+                            @apply text-gray-700 hover:text-primary-1;
+                        }
+                    }
+                }
+            }
+
+            .auth-profile {
+                @apply flex gap-2 items-center;
+
+                .username {
+                    @apply text-gray-700;
+                }
+
+                .photo {
+                    @apply h-9  aspect-square bg-palbrowner rounded-full;
+                }
+            }
+        }
+
+        .dashboard-content {
+            @apply overflow-scroll mt-[var(--admin-nav-height)] min-h-full;
+        }
+    }
+}

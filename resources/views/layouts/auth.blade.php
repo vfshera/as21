@@ -9,7 +9,7 @@
     <title>{{ config('app.name', 'AcademiaSteph21') }}</title>
 
     <!-- Scripts -->
-    @vite(['resources/css/app.css', 'resources/js/app.js'])
+    @vite(['resources/scss/app.scss', 'resources/js/app.js', 'resources/js/chart.min.js'])
 
     <!-- Styles -->
     @livewireStyles
@@ -17,12 +17,58 @@
 
 <body>
 
+    @props(['navs'])
+
+    @php
+        $user = request()->routeIs('admin.*') ? Auth::guard('admin')->user() : Auth::user();
+    @endphp
 
 
-    <main>
-        {{ $slot }}
+    <main class="dashboard ">
+
+        <aside class="sidebar">
+
+            <div class="banner ">
+                <img src="/storage/images/as21logo.png" alt="academiasteph21 logo"></img>
+                <span>academiasteph21</span>
+            </div>
+
+            <x-dashboard.sidebar :navs="$navs" />
+
+        </aside>
+
+        <section class="nav-content">
+
+            <header class="dashboard-header">
+
+                <nav class="header-links">
+                    <ul>
+                        <li>
+                            <a href="">Notifications</a>
+                        </li>
+                        <li>
+                            <a href="">Profile</a>
+                        </li>
+                    </ul>
+                </nav>
+
+                <section class="auth-profile">
+                    <span class="username">Hi {{ $user->name }}</span>
+                    <div class="photo">
+                        <img src="/storage/images/as21logo.png" alt="profile photo"></img>
+                    </div>
+                </section>
+            </header>
+
+            <div class="dashboard-content">
+                {{ $slot }}
+            </div>
+
+        </section>
+
     </main>
 
+    @stack('scripts')
 
     @stack('modals')
 
