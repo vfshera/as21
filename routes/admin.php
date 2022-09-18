@@ -10,5 +10,6 @@ Route::prefix('admin')->name('admin.')->group(function () {
     Route::post('logout', [LoginController::class, 'logout'])->name('logout');
 
     Route::get('dashboard', [PagesController::class, 'dashboard'])->name('dashboard');
+    Route::get('profile', [PagesController::class, 'profile'])->name('profile');
 
 });

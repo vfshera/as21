@@ -30,11 +30,6 @@ class ContactForm extends Component
         $this->validateOnly($field);
     }
 
-    public function render()
-    {
-        return view('livewire.contact-form');
-    }
-
     public function send()
     {
 
@@ -47,4 +42,10 @@ class ContactForm extends Component
         return redirect('/');
 
     }
+
+    public function render()
+    {
+        return view('livewire.contact-form');
+    }
+
 }

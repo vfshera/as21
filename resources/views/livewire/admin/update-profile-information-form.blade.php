@@ -1,4 +1,3 @@
-<div class="mt-20"></div>
 <x-jet-form-section submit="updateProfileInformation">
     <x-slot name="title">
         {{ __('Profile Information') }}

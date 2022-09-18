@@ -13,7 +13,7 @@
             }
 
             .admin-card {
-                @apply relative rounded  p-5 shadow  hover:shadow-md transition-shadow duration-300;
+                @apply relative rounded  p-5 shadow  hover:shadow-md transition-all duration-500 ease-in-out hover:scale-[1.01];
 
                 p.cards-title {
                     @apply absolute -top-2 left-0;

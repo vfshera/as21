@@ -7,6 +7,7 @@ use App\Models\AcademicLevel;
 use App\Models\PaperFormat;
 use App\Models\PaperType;
 use App\Models\SubjectArea;
+use Illuminate\Support\Facades\Auth;
 
 class PagesController extends Controller
 {
@@ -21,5 +22,12 @@ class PagesController extends Controller
         ];
 
         return view('admin.dashboard', compact('appstats'));
+    }
+
+    public function profile()
+    {
+        $user = Auth::guard('admin')->user();
+
+        return view('admin.profile', compact('user'));
     }
 }
