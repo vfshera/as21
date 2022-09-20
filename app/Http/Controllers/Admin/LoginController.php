@@ -11,6 +11,11 @@ class LoginController extends Controller
 
     protected $redirectsTo = '/admin/dashboard';
 
+    public function __construct()
+    {
+        $this->middleware('guest:admin')->except('logout');
+    }
+
     public function loginPage()
     {
         return view('admin.auth.login');
@@ -18,12 +23,13 @@ class LoginController extends Controller
 
     public function login(Request $request)
     {
+
         $credentials = $request->validate([
             'email' => ['required', 'email'],
             'password' => ['required'],
         ]);
 
-        if (Auth::guard('admin')->attempt($credentials)) {
+        if (Auth::guard('admin')->attempt($credentials, $request->remember)) {
             $request->session()->regenerate();
 
             return redirect()->intended($this->redirectsTo);

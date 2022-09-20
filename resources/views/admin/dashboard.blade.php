@@ -34,7 +34,7 @@
 
         <section class="charts">
 
-            @foreach ([(object) ['id' => 'first', 'type' => 'line'], (object) ['id' => 'second', 'type' => 'pie']] as $chart)
+            @foreach ([(object) ['id' => 'first', 'type' => 'line'], (object) ['id' => 'second', 'type' => 'polarArea']] as $chart)
                 <x-dashboard.chart :id="$chart->id" :type="$chart->type" />
             @endforeach
 
