@@ -79,6 +79,11 @@ main.dashboard {
                         a {
                             @apply text-gray-700 hover:text-primary-1;
                         }
+                        &.active {
+                            a {
+                                @apply text-primary-1;
+                            }
+                        }
                     }
                 }
             }

@@ -4,7 +4,7 @@
         <ul>
             @foreach ($nav->links as $link)
                 <li @class([
-                    'active' => request()->routeIs($link->url),
+                    'active' => url()->current() === $link->url,
                 ])>
 
 

@@ -12,7 +12,7 @@ Route::prefix('admin')->middleware([])->name('admin.')->group(function () {
         Route::post('logout', [LoginController::class, 'logout'])->name('logout');
     });
 
-    Route::middleware('auth:admin')->group(function () {
+    Route::middleware('auth:admin', config('jetstream.auth_session'))->group(function () {
 
         Route::get('dashboard', [PagesController::class, 'dashboard'])->name('dashboard');
         Route::get('profile', [PagesController::class, 'profile'])->name('profile');

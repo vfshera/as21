@@ -100,7 +100,9 @@
                 <nav class="header-links">
                     <ul>
                         @foreach ($headerLinks as $link)
-                            <li>
+                            <li @class([
+                                'active' => url()->current() === $link->url,
+                            ])>
                                 <a href="{{ $link->url }}">{{ $link->title }}</a>
                             </li>
                         @endforeach
