@@ -19,67 +19,6 @@
 
 
 
-    @php
-        $user = request()->routeIs('admin.*') ? Auth::guard('admin')->user() : Auth::user();
-        
-        $headerLinks = [
-            (object) [
-                'title' => 'Notifications',
-                'url' => '',
-            ],
-            (object) [
-                'title' => 'Profile',
-                'url' => route('admin.profile'),
-            ],
-        ];
-        
-        $adminNavs = [
-            (object) [
-                'name' => 'Main',
-                'sideclass' => '',
-                'linkclass' => '',
-                'links' => [
-                    (object) [
-                        'title' => 'Dashboard',
-                        'url' => route('admin.dashboard'),
-                    ],
-                    (object) [
-                        'title' => 'Orders',
-                        'url' => '',
-                    ],
-                    (object) [
-                        'title' => 'Clients',
-                        'url' => '',
-                    ],
-                    (object) [
-                        'title' => 'Payments',
-                        'url' => '',
-                    ],
-                ],
-            ],
-            (object) [
-                'name' => 'More',
-                'sideclass' => 'mt-20',
-                'linkclass' => 'text-primary-3',
-                'links' => [
-                    (object) [
-                        'title' => 'Insights',
-                        'url' => '',
-                    ],
-                    (object) [
-                        'title' => 'Store',
-                        'url' => '',
-                    ],
-                    (object) [
-                        'title' => 'Marketplace',
-                        'url' => '',
-                    ],
-                ],
-            ],
-        ];
-    @endphp
-
-
     <main class="dashboard ">
 
         <aside class="sidebar">

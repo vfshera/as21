@@ -17,6 +17,10 @@ Route::prefix('admin')->middleware([])->name('admin.')->group(function () {
         Route::get('dashboard', [PagesController::class, 'dashboard'])->name('dashboard');
         Route::get('profile', [PagesController::class, 'profile'])->name('profile');
 
+        Route::prefix('orders')->name('orders.')->group(function () {
+            Route::get('/', [PagesController::class, 'orders'])->name('all');
+        });
+
     });
 
 });

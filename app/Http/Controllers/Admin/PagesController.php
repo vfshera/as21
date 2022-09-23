@@ -30,4 +30,10 @@ class PagesController extends Controller
 
         return view('admin.profile', compact('user'));
     }
+
+    public function orders()
+    {
+
+        return view('admin.orders.show');
+    }
 }
