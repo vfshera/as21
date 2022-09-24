@@ -1,5 +1,3 @@
 <x-auth-layout>
-    <div class="orders-page">
-        Orders
-    </div>
+    <livewire:admin.orders />
 </x-auth-layout>

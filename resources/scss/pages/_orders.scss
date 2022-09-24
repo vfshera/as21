@@ -1,0 +1,42 @@
+.orders-page {
+    @apply px-5 pt-5;
+    header {
+        @apply bg-gray-100 gap-3 shadow grid grid-cols-5 px-5 py-3;
+
+        .searchbar {
+            @apply col-span-2;
+            input {
+                @apply rounded border w-full border-gray-300;
+            }
+        }
+
+        .stage {
+            select {
+                @apply rounded border w-full border-gray-300;
+            }
+        }
+        .pages {
+            @apply col-span-2;
+        }
+    }
+
+    section.orders {
+        @apply mt-5  w-full bg-white  shadow rounded;
+
+        .orders-head {
+            @apply grid grid-cols-5 gap-2 py-3  border-b-2 border-gray-200 px-3;
+            span {
+                @apply text-gray-900 font-semibold;
+            }
+        }
+
+        .orders-list {
+            a {
+                @apply grid cursor-pointer hover:bg-gray-50 grid-cols-5 px-3 gap-2 py-1;
+                span {
+                    @apply text-gray-700;
+                }
+            }
+        }
+    }
+}
