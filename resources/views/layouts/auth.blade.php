@@ -30,6 +30,18 @@
 
             <x-dashboard.sidebar :navs="$adminNavs" />
 
+
+            <div class="logout bg-blue-50 p-5 rounded shadow">
+                <form method="POST"
+                    action="{{ request()->routeIs('admin.*') ? route('admin.logout') : route('logout') }}" x-data>
+                    @csrf
+
+                    <button class="bg-red-500 w-full text-white rounded text-center py-1" type="submit">
+                        {{ __('Log Out') }}
+                    </button>
+                </form>
+            </div>
+
         </aside>
 
         <section class="nav-content">
@@ -50,9 +62,9 @@
                 </nav>
 
                 <section class="auth-profile">
-                    <span class="username">Hi {{ $user->name }}</span>
+                    <span class="username" @class(['text-red-500' => $user->status === 0])>Hi {{ $user->name }}</span>
                     <div class="photo">
-                        <img src="/storage/images/as21logo.png" alt="profile photo"></img>
+                        <img src="{{ $user->profile_photo_url }}" alt="profile photo"></img>
                     </div>
                 </section>
             </header>

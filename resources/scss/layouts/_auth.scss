@@ -96,7 +96,7 @@ main.dashboard {
                 }
 
                 .photo {
-                    @apply h-9  aspect-square bg-palbrowner rounded-full;
+                    @apply h-9  aspect-square bg-palbrowner rounded-full overflow-hidden;
                 }
             }
         }
