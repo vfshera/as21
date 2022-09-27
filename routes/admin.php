@@ -6,11 +6,12 @@ use Illuminate\Support\Facades\Route;
 
 Route::prefix('admin')->middleware([])->name('admin.')->group(function () {
 
-    Route::middleware('guest:admin')->group(function () {
+    Route::middleware('admin:admin')->group(function () {
         Route::get('login', [LoginController::class, 'loginPage'])->name('login.show');
         Route::post('login', [LoginController::class, 'login'])->name('login');
-        Route::post('logout', [LoginController::class, 'logout'])->name('logout');
     });
+
+    Route::post('logout', [LoginController::class, 'logout'])->name('logout');
 
     Route::middleware('auth:admin', config('jetstream.auth_session'))->group(function () {
 
@@ -18,6 +19,7 @@ Route::prefix('admin')->middleware([])->name('admin.')->group(function () {
         Route::get('profile', [PagesController::class, 'profile'])->name('profile');
 
         Route::prefix('orders')->name('orders.')->group(function () {
+
             Route::get('/', [PagesController::class, 'orders'])->name('all');
         });
 
