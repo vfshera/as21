@@ -14,6 +14,6 @@ class AcademicLevelSeeder extends Seeder
      */
     public function run()
     {
-        AcademicLevel::factory(10)->create();
+        AcademicLevel::factory(30)->create();
     }
 }

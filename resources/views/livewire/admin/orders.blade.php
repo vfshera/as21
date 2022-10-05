@@ -32,7 +32,7 @@
                     <span>{{ $order->id }}</span>
                     <span>{{ date('jS M Y', strtotime($order->created_at)) }}</span>
                     <span>{{ $order->stage }}</span>
-                    <span>{{ $order->client_id }}</span>
+                    <span>{{ $order->user->name }}</span>
                     <span>{{ $order->urgency }}</span>
                 </a>
             @endforeach

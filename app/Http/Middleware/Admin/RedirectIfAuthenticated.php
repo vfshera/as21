@@ -1,8 +1,7 @@
 <?php
 
-namespace App\Http\Middleware;
+namespace App\Http\Middleware\Admin;
 
-use App\Providers\RouteServiceProvider;
 use Closure;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -25,7 +24,8 @@ class RedirectIfAuthenticated
 
             if (Auth::guard($guard)->check()) {
 
-                return redirect(RouteServiceProvider::HOME);
+                return redirect('/admin/dashboard');
+
             }
         }
 

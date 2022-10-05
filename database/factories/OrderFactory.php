@@ -27,7 +27,7 @@ class OrderFactory extends Factory
             "type_of_paper" => $this->faker->userName,
             "subject_area" => $this->faker->streetAddress,
             "paper_details" => $this->faker->sentence(50),
-            "additional_materials" => "/orders/materials/".Str::random(12).".zip",
+            "additional_materials" => "/orders/materials/" . Str::random(12) . ".zip",
             "paper_format" => $this->faker->currencyCode,
             "prefered_english" => $this->faker->languageCode,
             "number_of_sources" => $this->faker->randomDigit,
@@ -37,7 +37,7 @@ class OrderFactory extends Factory
             "urgency" => "2 Weeks",
             "stage" => 0,
             "service_type" => 1,
-            "client_id" => 1,
+            "user_id" => 1,
         ];
     }
 }

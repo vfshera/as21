@@ -18,9 +18,10 @@ class DatabaseSeeder extends Seeder
     {
         User::create([
             'name' => 'First Client',
-            'email' => 'userone@as21.com',
+            'email' => 'user@as21.com',
             'password' => Hash::make('123456789'),
             'email_verified_at' => now(),
+            'status' => 1,
         ]);
 
         Admin::create([
@@ -28,6 +29,7 @@ class DatabaseSeeder extends Seeder
             'email' => 'admin@as21.com',
             'password' => Hash::make('123456789'),
             'email_verified_at' => now(),
+            'status' => 1,
         ]);
 
         $this->call([

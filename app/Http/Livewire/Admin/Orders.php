@@ -13,7 +13,7 @@ class Orders extends Component
 
     public function render()
     {
-        $orders = Order::orderByDesc('created_at')->paginate(5);
+        $orders = Order::with('user')->orderByDesc('created_at')->paginate(5);
 
         return view('livewire.admin.orders', compact('orders'));
     }

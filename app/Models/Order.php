@@ -2,6 +2,10 @@
 
 namespace App\Models;
 
+use App\Models\ClientFeedback;
+use App\Models\OrderAssign;
+use App\Models\OrderMaterial;
+use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
@@ -23,59 +27,63 @@ class Order extends Model
         "urgency",
         "stage",
         "service_type",
-        "client_id",
-        "cost"
+        "user_id",
+        "cost",
     ];
-
 
     public function payment()
     {
         return $this->hasOne(Payment::class);
     }
 
-
-    public function client(){
-        return $this->belongsTo(Client::class);
+    public function user()
+    {
+        return $this->belongsTo(User::class);
     }
 
-    public function orderAssign(){
-        return $this->hasOne(OrderAssign::class , 'order_id');
+    public function orderAssign()
+    {
+        return $this->hasOne(OrderAssign::class, 'order_id');
     }
 
-    public function clientFeedback(){
+    public function clientFeedback()
+    {
         return $this->hasOne(ClientFeedback::class);
     }
 
-    public function orderMaterials(){
+    public function orderMaterials()
+    {
         return $this->hasMany(OrderMaterial::class);
     }
 
-    public function scopePaid($query){
-        return $query->whereIn('stage' ,[0,4]);
+    public function scopePaid($query)
+    {
+        return $query->whereIn('stage', [0, 4]);
     }
 
-    public function scopePending($query){
-        return $query->where('stage' , 0);
+    public function scopePending($query)
+    {
+        return $query->where('stage', 0);
     }
 
-    public function scopeUnassigned($query){
-        return $query->where('stage' , 4);
+    public function scopeUnassigned($query)
+    {
+        return $query->where('stage', 4);
     }
 
-
-    public function scopeActive($query){
-        return $query->where('stage' , 2);
+    public function scopeActive($query)
+    {
+        return $query->where('stage', 2);
     }
 
-
-    public function scopeCancelled($query){
-        return $query->where('stage' , 3);
+    public function scopeCancelled($query)
+    {
+        return $query->where('stage', 3);
     }
 
-
-    public function scopeCompleted($query){
-        return $query->where('stage' , 1);
+    public function scopeCompleted($query)
+    {
+        return $query->where('stage', 1);
     }
-
 
 }

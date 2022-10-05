@@ -14,6 +14,6 @@ class PaperTypeSeeder extends Seeder
      */
     public function run()
     {
-        PaperType::factory(10)->create();
+        PaperType::factory(30)->create();
     }
 }
