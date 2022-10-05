@@ -83,6 +83,7 @@ class Order extends Model
 
     public function scopeCompleted($query)
     {
+
         return $query->where('stage', 1);
     }
 

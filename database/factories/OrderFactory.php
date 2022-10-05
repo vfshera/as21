@@ -37,6 +37,7 @@ class OrderFactory extends Factory
             "urgency" => "2 Weeks",
             "stage" => 0,
             "service_type" => 1,
+            "cost" => random_int(1000, 20000),
             "user_id" => 1,
         ];
     }

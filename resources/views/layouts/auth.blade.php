@@ -62,9 +62,10 @@
                 </nav>
 
                 <section class="auth-profile">
-                    <span class="username" @class(['text-red-500' => $user->status === 0])>Hi {{ $user->name }}</span>
+                    <span class="username" @class(['text-red-500' => $user->status === 0])>Hi
+                        {{ Auth::user()->name }}</span>
                     <div class="photo">
-                        <img src="{{ $user->profile_photo_url }}" alt="profile photo"></img>
+                        <img src="{{ Auth::user()->profile_photo_url }}" alt="profile photo"></img>
                     </div>
                 </section>
             </header>

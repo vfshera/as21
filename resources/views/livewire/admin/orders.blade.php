@@ -19,10 +19,15 @@
 
         <div class="orders-head">
             <span>Invoice</span>
-            <span>Date</span>
-            <span>Status</span>
             <span>Client</span>
+            <span>Paper Type</span>
+            <span>Pages</span>
+            <span>Sources</span>
+            <span>Service</span>
+            <span>Status</span>
             <span>Urgency</span>
+            <span>Cost</span>
+            <span>Date</span>
         </div>
 
         <div class="orders-list">
@@ -30,10 +35,15 @@
             @foreach ($orders as $order)
                 <a href="#">
                     <span>{{ $order->id }}</span>
-                    <span>{{ date('jS M Y', strtotime($order->created_at)) }}</span>
-                    <span>{{ $order->stage }}</span>
                     <span>{{ $order->user->name }}</span>
+                    <span>{{ $order->type_of_paper }}</span>
+                    <span>{{ $order->number_of_pages }}</span>
+                    <span>{{ $order->number_of_sources }}</span>
+                    <span>{{ $order->service_type }}</span>
+                    <span>{{ $order->stage }}</span>
                     <span>{{ $order->urgency }}</span>
+                    <span>{{ $order->cost }}</span>
+                    <span>{{ date('d/m/y', strtotime($order->created_at)) }}</span>
                 </a>
             @endforeach
         </div>

@@ -4,7 +4,6 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\AcademicLevel;
-use App\Models\Order;
 use App\Models\PaperFormat;
 use App\Models\PaperType;
 use App\Models\SubjectArea;
@@ -34,8 +33,7 @@ class PagesController extends Controller
 
     public function orders()
     {
-        $orders = Order::orderByDesc('created_at')->get();
 
-        return view('admin.orders.show', compact('orders'));
+        return view('admin.orders.show');
     }
 }
