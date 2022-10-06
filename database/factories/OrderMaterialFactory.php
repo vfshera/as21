@@ -22,7 +22,9 @@ class OrderMaterialFactory extends Factory
     public function definition()
     {
         return [
-            //
+            'material_name' => $this->faker->title,
+            'type' => $this->faker->bloodType(),
+            'order_id' => random_int(1, 10),
         ];
     }
 }
