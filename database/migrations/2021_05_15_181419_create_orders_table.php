@@ -15,7 +15,6 @@ class CreateOrdersTable extends Migration
     {
         Schema::create('orders', function (Blueprint $table) {
             $table->id();
-
             $table->longText("topic");
             $table->string("type_of_paper");
             $table->string("subject_area");
@@ -32,7 +31,7 @@ class CreateOrdersTable extends Migration
             $table->string("user_id");
             $table->string("service_type");
             $table->string("paypal_order_id")->nullable(true);
-            $table->decimal("cost", 5, 2)->default(0.00);
+            $table->bigInteger("cost")->default(0);
             $table->boolean("viewed")->nullable(true)->default(false);
 
             $table->timestamps();
