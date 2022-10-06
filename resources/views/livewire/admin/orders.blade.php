@@ -35,14 +35,14 @@
             @foreach ($orders as $order)
                 <a href="#">
                     <span>{{ $order->id }}</span>
-                    <span>{{ $order->user->name }}</span>
+                    <span>{{ Str::afterLast($order->user->name, ' ') }}</span>
                     <span class="col-span-2">{{ $order->type_of_paper }}</span>
                     <span>{{ $order->number_of_pages }}</span>
                     <span>{{ $order->number_of_sources }}</span>
                     <span>{{ $order->service_type }}</span>
                     <span>{{ $order->stage }}</span>
                     <span>{{ $order->urgency }}</span>
-                    <span>{{ $order->cost }}</span>
+                    <span class="cost">{{ number_format($order->cost, 0, '.', ',') }}</span>
                     <span>{{ date('d/m/y', strtotime($order->created_at)) }}</span>
                 </a>
             @endforeach

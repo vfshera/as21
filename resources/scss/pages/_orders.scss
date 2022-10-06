@@ -35,6 +35,10 @@
                 @apply grid cursor-pointer hover:bg-gray-50 grid-cols-11 px-3 gap-2 py-1;
                 span {
                     @apply text-gray-700;
+
+                    &.cost {
+                        @apply text-green-800;
+                    }
                 }
             }
         }

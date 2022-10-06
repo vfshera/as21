@@ -22,9 +22,20 @@ class OrderFactory extends Factory
      */
     public function definition()
     {
+
         return [
             "topic" => $this->faker->sentence,
-            "type_of_paper" => $this->faker->safeColorName(),
+            "type_of_paper" => $this->faker->randomElement([
+                "Research Paper",
+                "White Paper",
+                "Class Assignment",
+                "Case Study",
+                "Dissertation",
+                "Proofreading",
+                "Editing",
+                "Captioning",
+                "Transcription",
+            ]),
             "subject_area" => $this->faker->jobTitle,
             "paper_details" => $this->faker->sentence(50),
             "additional_materials" => "/orders/materials/" . Str::random(12) . ".zip",
@@ -34,7 +45,12 @@ class OrderFactory extends Factory
             "number_of_pages" => $this->faker->randomDigit,
             "spacing" => $this->faker->randomElement(["Double Spacing", "Single Spacing"]),
             "academic_level" => $this->faker->randomElement(["School", "University", "Post Graduate"]),
-            "urgency" => $this->faker->randomElement(["6 Hours", "12 Hours", "1 Day", "2 Days", "3 Days", "4 Days", "5 Days", "6 Days", "1 Week", "10 Days", "2 Weeks", "1 Month", "2 Months"]),
+            "urgency" => $this->faker->randomElement([
+                "6 Hours", "12 Hours", "1 Day", "2 Days",
+                "3 Days", "4 Days", "5 Days", "6 Days",
+                "1 Week", "10 Days", "2 Weeks",
+                "1 Month", "2 Months",
+            ]),
             "stage" => random_int(0, 4),
             "service_type" => random_int(0, 2),
             "cost" => random_int(1000, 20000),
