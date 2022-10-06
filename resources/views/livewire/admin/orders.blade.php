@@ -20,7 +20,7 @@
         <div class="orders-head">
             <span>Invoice</span>
             <span>Client</span>
-            <span>Paper Type</span>
+            <span class="col-span-2">Paper Type</span>
             <span>Pages</span>
             <span>Sources</span>
             <span>Service</span>
@@ -36,7 +36,7 @@
                 <a href="#">
                     <span>{{ $order->id }}</span>
                     <span>{{ $order->user->name }}</span>
-                    <span>{{ $order->type_of_paper }}</span>
+                    <span class="col-span-2">{{ $order->type_of_paper }}</span>
                     <span>{{ $order->number_of_pages }}</span>
                     <span>{{ $order->number_of_sources }}</span>
                     <span>{{ $order->service_type }}</span>
