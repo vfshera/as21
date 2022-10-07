@@ -4,8 +4,8 @@
             <input type="text" placeholder="search orders...">
         </div>
         <div class="stage">
-            <select name="" id="">
-                <option value="">Stage</option>
+            <select name="status" id="" value="">
+                <option value="">Status</option>
             </select>
         </div>
         <div class="pages">
@@ -40,7 +40,7 @@
                     <span>{{ $order->number_of_pages }}</span>
                     <span>{{ $order->number_of_sources }}</span>
                     <span>{{ $order->service_type }}</span>
-                    <span>{{ $order->stage }}</span>
+                    <span class="{{ $order->stage }}-order">{{ $order->stage }}</span>
                     <span>{{ $order->urgency }}</span>
                     <span class="cost">{{ number_format($order->cost, 0, '.', ',') }}</span>
                     <span>{{ date('d/m/y', strtotime($order->created_at)) }}</span>
