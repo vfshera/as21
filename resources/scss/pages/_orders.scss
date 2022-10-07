@@ -1,18 +1,18 @@
 .orders-page {
     @apply px-5 pt-5;
     header {
-        @apply bg-gray-100 gap-3 shadow grid grid-cols-5 px-5 py-3;
+        @apply bg-white gap-3 shadow grid grid-cols-5 px-3 rounded py-3;
 
         .searchbar {
             @apply col-span-2;
             input {
-                @apply rounded border w-full border-gray-300;
+                @apply rounded border w-full bg-[#fcfbff] border-gray-300;
             }
         }
 
         .stage {
             select {
-                @apply rounded border w-full border-gray-300;
+                @apply rounded border w-full bg-[#fcfbff] border-gray-300;
             }
         }
         .pages {
@@ -21,7 +21,7 @@
     }
 
     section.orders {
-        @apply mt-5  w-full bg-white  shadow rounded;
+        @apply relative mt-5  w-full bg-white  shadow rounded;
 
         .orders-head {
             @apply grid grid-cols-11 gap-2 py-3  border-b-2 border-gray-200 px-3;

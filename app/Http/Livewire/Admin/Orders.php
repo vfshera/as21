@@ -11,6 +11,8 @@ class Orders extends Component
 
     use WithPagination;
 
+    public $status = "";
+
     public function render()
     {
         $orders = Order::with('user')->orderByDesc('created_at')->paginate(14);
