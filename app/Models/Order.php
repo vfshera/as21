@@ -6,6 +6,7 @@ use App\Models\ClientFeedback;
 use App\Models\OrderAssign;
 use App\Models\OrderMaterial;
 use App\Models\User;
+use Illuminate\Database\Eloquent\Casts\Attribute;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
@@ -30,6 +31,24 @@ class Order extends Model
         "user_id",
         "cost",
     ];
+
+    protected function stage(): Attribute
+    {
+        $statuses = ["pending", "completed", "active", "cancelled", "unassigned"];
+
+        return Attribute::make(
+            get:fn($value) => $statuses[$value]
+        );
+    }
+
+    protected function serviceType(): Attribute
+    {
+        $services = ["writing", "rewriting", "editing"];
+
+        return Attribute::make(
+            get:fn($value) => $services[$value]
+        );
+    }
 
     public function payment()
     {
